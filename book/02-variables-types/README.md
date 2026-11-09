@@ -815,8 +815,8 @@ go test -count=1 ./examples/02-variables-types/... ./solutions/02-variables-type
 
 ## 다음 학습
 
-다음은 **03. 조건문과 반복문**이며 아직 집필 예정입니다. 이번 장에서는 비교 결과를 `bool`로 만들었습니다. 다음 장에서는 그 결과에 따라 실행할 코드를 선택하고, 같은 동작을 여러 값에 반복하는 방법으로 이어집니다. 집필 상태는 [전체 목차](../README.md)와 [로드맵](../../docs/ROADMAP.md)에서 확인합니다.
+다음은 [03. 조건문과 반복문](../03-control-flow/README.md)입니다. 이번 장에서는 비교 결과를 `bool`로 만들었습니다. 다음 장에서는 그 결과에 따라 실행할 코드를 선택하고, 같은 동작을 여러 값에 반복하는 방법으로 이어집니다. 조건의 경계값과 반복의 종료 시점을 확인하며 합계와 학습 계획을 직접 계산합니다.
 
-| 이전 | 목차 | 실습과 해설 |
-| --- | --- | --- |
-| [01. 첫 Go 프로그램](../01-first-program/README.md) | [전체 목차](../README.md) | [문제](../../exercises/02-variables-types/README.md) · [해설](../../solutions/02-variables-types/README.md) |
+| 이전 | 목차 | 다음 | 실습과 해설 |
+| --- | --- | --- | --- |
+| [01. 첫 Go 프로그램](../01-first-program/README.md) | [전체 목차](../README.md) | [03. 조건문과 반복문](../03-control-flow/README.md) | [문제](../../exercises/02-variables-types/README.md) · [해설](../../solutions/02-variables-types/README.md) |
