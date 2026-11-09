@@ -1116,4 +1116,4 @@ go test -count=1 ./examples/06-maps/... ./solutions/06-maps/...
 
 다음 07장에서는 문자열의 바이트와 룬을 구분하고, 한글을 포함한 텍스트를 읽고 처리합니다. 맵 집계에 넣기 전 공백과 대소문자를 어떻게 다룰지도 연결합니다.
 
-[이전: 05. 배열과 슬라이스](../05-arrays-slices/README.md) · [전체 목차](../README.md) · [문제](../../exercises/06-maps/README.md) · [해설](../../solutions/06-maps/README.md)
+[이전: 05. 배열과 슬라이스](../05-arrays-slices/README.md) · [다음: 07. 문자열과 유니코드](../07-strings-unicode/README.md) · [전체 목차](../README.md) · [문제](../../exercises/06-maps/README.md) · [해설](../../solutions/06-maps/README.md)
