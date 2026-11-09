@@ -5,12 +5,16 @@
 | 장 | 예제 | 실행 명령 | 확인할 내용 |
 | --- | --- | --- | --- |
 | [01. 첫 Go 프로그램](../book/01-first-program/README.md) | [hello](01-first-program/hello/main.go) | `go run ./examples/01-first-program/hello` | 인사 한 줄 출력 |
+| [01. 첫 Go 프로그램](../book/01-first-program/README.md) | [output](01-first-program/output/main.go) | `go run ./examples/01-first-program/output` | `Print`·`Println`·`Printf`의 공백과 줄바꿈 |
+| [01. 첫 Go 프로그램](../book/01-first-program/README.md) | [multifile](01-first-program/multifile/main.go) · [message.go](01-first-program/multifile/message.go) | `go run ./examples/01-first-program/multifile` | 같은 패키지의 여러 파일을 함께 실행하는 선택 예제 |
 
-출력 예시는 다음과 같습니다.
+`hello`의 출력 예시는 다음과 같습니다.
 
 ```text
 안녕하세요, Go!
 ```
+
+`output`은 문장 사이의 공백과 줄바꿈을 비교합니다. `multifile`은 다른 파일에 정의한 함수를 호출하므로 예제 폴더를 실행 대상으로 지정합니다. 각 예제의 예상 출력과 설명은 [01장](../book/01-first-program/README.md)에 있습니다. 패키지를 지정하는 실행과 파일을 직접 나열하는 실행의 차이는 [go run 공식 문서](https://pkg.go.dev/cmd/go#hdr-Compile_and_run_Go_program)를 참고합니다.
 
 ## 예제를 읽는 순서
 

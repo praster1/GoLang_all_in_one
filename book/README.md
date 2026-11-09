@@ -19,7 +19,7 @@ Go를 처음 배우는 독자가 작은 프로그램을 직접 실행하면서 H
 | 장 | 주제 | 학습 후 할 수 있는 일 | 상태 |
 | --- | --- | --- | --- |
 | [00. 개발 환경과 학습 준비](00-setup/README.md) | 운영체제별 설치, VS Code·IntelliJ, 환경 진단, 실행·빌드 실습 | 설치와 모듈을 확인하고 개인 프로그램을 실행·빌드한다 | 검토 완료 |
-| [01. 첫 Go 프로그램](01-first-program/README.md) | `package main`, `import`, `main`, 출력 | 프로그램이 시작되는 위치와 출력 흐름을 설명한다 | 초안 |
+| [01. 첫 Go 프로그램](01-first-program/README.md) | 프로그램 구조, 출력·서식, 문자열, 실행·빌드, 오류 읽기 | 공백과 줄바꿈을 제어하고 자신의 프로그램을 실행·수정한다 | 검토 완료 |
 | 02. 변수·상수·자료형·연산자 | 선언, 타입 추론, 영값, 형 변환 | 적절한 자료형으로 값을 표현하고 계산한다 | 예정 |
 | 03. 조건문과 반복문 | `if`, `switch`, `for`, `range` | 조건과 반복으로 입력 데이터를 처리한다 | 예정 |
 | 04. 함수와 스코프 | 매개변수, 다중 반환, 가변 인자, 클로저 | 작은 함수를 조합해 책임을 나눈다 | 예정 |
@@ -81,7 +81,7 @@ Go를 처음 배우는 독자가 작은 프로그램을 직접 실행하면서 H
 | 해설 코드 | `solutions/NN-topic/` | 풀이 비교와 확장 학습 |
 | 공통 작성 틀 | [`templates/chapter.md`](../templates/chapter.md) | 새 장을 쓸 때 복사하여 사용 |
 
-처음 시작한다면 [00장 환경 실습](../exercises/00-setup/README.md)과 [해설](../solutions/00-setup/README.md)에서 도구 사용을 확인합니다. 이어서 [첫 예제](../examples/01-first-program/hello/main.go)와 [01장 연습문제](../exercises/01-first-program/README.md)를 학습합니다.
+처음 시작한다면 [00장 환경 실습](../exercises/00-setup/README.md)과 [해설](../solutions/00-setup/README.md)에서 도구 사용을 확인합니다. 이어서 [첫 예제](../examples/01-first-program/hello/main.go), [01장 연습문제](../exercises/01-first-program/README.md), [01장 해설](../solutions/01-first-program/README.md)을 학습합니다.
 
 ## 공식 참고 자료
 
