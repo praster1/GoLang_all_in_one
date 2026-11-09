@@ -20,6 +20,7 @@
 | --- | --- | --- |
 | 00. 개발 환경과 학습 준비 | [00장 실습 준비](00-setup/README.md) | `_practice/00-setup/main.go` |
 | 01. 첫 Go 프로그램 | [01장 문제별 준비](01-first-program/README.md) | `_practice/01-first-program/` 아래의 `message/`, `report/`, `repair/`; 선택 과제는 `greeting/` |
+| 02. 변수·상수·자료형·연산자 | [02장 문제별 준비](02-variables-types/README.md) | `_practice/02-variables-types/` 아래의 `study-log/`, `time-parts/`, `repair/`, `average/`, `receipt/`; 선택 과제는 `iota/` |
 
 연습 폴더에도 새 `go.mod`나 `go.work`를 만들지 않습니다. 루트의 모듈 설정을 사용합니다. 한 폴더에는 실행 프로그램 하나를 두고, 답안을 보관하려면 다른 폴더를 사용하세요. 같은 폴더에 `main` 함수가 있는 파일을 여러 개 두면 중복 선언이 발생합니다.
 
@@ -40,5 +41,6 @@ go fmt ./_practice/01-first-program/message
 | --- | --- | --- |
 | 00. 개발 환경과 학습 준비 | [환경 확인·실행·문제 해결 실습](00-setup/README.md) | [00장 실습 해설](../solutions/00-setup/README.md) |
 | 01. 첫 Go 프로그램 | [출력 예측·변형·보고서·오류 진단과 선택 과제](01-first-program/README.md) | [01장 해설](../solutions/01-first-program/README.md) |
+| 02. 변수·상수·자료형·연산자 | [값 예측·시간 계산·형 변환·평균·예산 비교](02-variables-types/README.md) | [02장 해설](../solutions/02-variables-types/README.md) |
 
 새로운 장의 문제는 해당 장이 작성될 때 추가합니다. [전체 교재 목차](../book/README.md)에서 집필 상태를 확인할 수 있습니다.

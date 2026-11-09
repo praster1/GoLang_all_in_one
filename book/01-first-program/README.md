@@ -537,8 +537,8 @@ go test -count=1 -v ./examples/01-first-program/hello
 
 ## 다음 학습
 
-다음은 **02. 변수·상수·자료형·연산자**입니다. 아직 집필 예정이며, 이번 장에서 코드에 직접 적었던 문자열과 숫자에 이름을 붙이고 계산하는 방법으로 이어집니다. 현재 제공하는 장과 집필 순서는 [전체 목차](../README.md)와 [로드맵](../../docs/ROADMAP.md)에서 확인합니다.
+다음은 [**02. 변수·상수·자료형·연산자**](../02-variables-types/README.md)입니다. 이번 장에서 코드에 직접 적었던 문자열과 숫자에 이름을 붙이고 계산하는 방법으로 이어집니다. 현재 제공하는 장과 집필 순서는 [전체 목차](../README.md)와 [로드맵](../../docs/ROADMAP.md)에서 확인합니다.
 
-| 이전 | 목차 | 실습과 해설 |
-| --- | --- | --- |
-| [00. 개발 환경과 학습 준비](../00-setup/README.md) | [전체 목차](../README.md) | [문제](../../exercises/01-first-program/README.md) · [해설](../../solutions/01-first-program/README.md) |
+| 이전 | 목차 | 다음 | 실습과 해설 |
+| --- | --- | --- | --- |
+| [00. 개발 환경과 학습 준비](../00-setup/README.md) | [전체 목차](../README.md) | [02. 변수·상수·자료형·연산자](../02-variables-types/README.md) | [문제](../../exercises/01-first-program/README.md) · [해설](../../solutions/01-first-program/README.md) |

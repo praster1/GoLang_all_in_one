@@ -2,11 +2,13 @@
 
 교재에서 설명하는 코드를 장별로 모았습니다. 모든 명령은 저장소 최상위 폴더에서 실행합니다. 각 예제 폴더는 독립적으로 실행할 수 있는 패키지이며, 루트의 `go.mod`를 함께 사용합니다.
 
-| 장 | 예제 | 실행 명령 | 확인할 내용 |
-| --- | --- | --- | --- |
-| [01. 첫 Go 프로그램](../book/01-first-program/README.md) | [hello](01-first-program/hello/main.go) | `go run ./examples/01-first-program/hello` | 인사 한 줄 출력 |
-| [01. 첫 Go 프로그램](../book/01-first-program/README.md) | [output](01-first-program/output/main.go) | `go run ./examples/01-first-program/output` | `Print`·`Println`·`Printf`의 공백과 줄바꿈 |
-| [01. 첫 Go 프로그램](../book/01-first-program/README.md) | [multifile](01-first-program/multifile/main.go) · [message.go](01-first-program/multifile/message.go) | `go run ./examples/01-first-program/multifile` | 같은 패키지의 여러 파일을 함께 실행하는 선택 예제 |
+## 01. 첫 Go 프로그램
+
+| 예제 | 실행 명령 | 확인할 내용 |
+| --- | --- | --- |
+| [hello](01-first-program/hello/main.go) | `go run ./examples/01-first-program/hello` | 인사 한 줄 출력 |
+| [output](01-first-program/output/main.go) | `go run ./examples/01-first-program/output` | `Print`·`Println`·`Printf`의 공백과 줄바꿈 |
+| [multifile](01-first-program/multifile/main.go) · [message.go](01-first-program/multifile/message.go) | `go run ./examples/01-first-program/multifile` | 같은 패키지의 여러 파일을 함께 실행하는 선택 예제 |
 
 `hello`의 출력 예시는 다음과 같습니다.
 
@@ -15,6 +17,22 @@
 ```
 
 `output`은 문장 사이의 공백과 줄바꿈을 비교합니다. `multifile`은 다른 파일에 정의한 함수를 호출하므로 예제 폴더를 실행 대상으로 지정합니다. 각 예제의 예상 출력과 설명은 [01장](../book/01-first-program/README.md)에 있습니다. 패키지를 지정하는 실행과 파일을 직접 나열하는 실행의 차이는 [go run 공식 문서](https://pkg.go.dev/cmd/go#hdr-Compile_and_run_Go_program)를 참고합니다.
+
+## 02. 변수·상수·자료형·연산자
+
+| 예제 | 실행 명령 | 확인할 내용 |
+| --- | --- | --- |
+| [variables](02-variables-types/variables/main.go) | `go run ./examples/02-variables-types/variables` | 변수 선언과 값 변경 |
+| [zero-values](02-variables-types/zero-values/main.go) | `go run ./examples/02-variables-types/zero-values` | 값을 지정하지 않은 변수의 영값과 자료형 |
+| [constants](02-variables-types/constants/main.go) | `go run ./examples/02-variables-types/constants` | 상수를 이용해 분을 시간과 나머지 분으로 계산 |
+| [conversions](02-variables-types/conversions/main.go) | `go run ./examples/02-variables-types/conversions` | 형 변환과 나눗셈 순서에 따른 결과 비교 |
+| [operators](02-variables-types/operators/main.go) | `go run ./examples/02-variables-types/operators` | 산술·비교·논리 연산과 우선순위 |
+
+각 예제의 코드 해설과 예상 출력은 [02장](../book/02-variables-types/README.md)에서 확인합니다. 다섯 예제만 검사하려면 저장소 루트에서 다음을 실행합니다.
+
+```sh
+go test -count=1 ./examples/02-variables-types/...
+```
 
 ## 예제를 읽는 순서
 
