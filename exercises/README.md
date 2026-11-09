@@ -22,6 +22,7 @@
 | 01. 첫 Go 프로그램 | [01장 문제별 준비](01-first-program/README.md) | `_practice/01-first-program/` 아래의 `message/`, `report/`, `repair/`; 선택 과제는 `greeting/` |
 | 02. 변수·상수·자료형·연산자 | [02장 문제별 준비](02-variables-types/README.md) | `_practice/02-variables-types/` 아래의 `study-log/`, `time-parts/`, `repair/`, `average/`, `receipt/`; 선택 과제는 `iota/` |
 | 03. 조건문과 반복문 | [03장 문제별 준비](03-control-flow/README.md) | `_practice/03-control-flow/` 아래의 `grade/`, `signal/`, `repair/`, `multiples/`, `goal/`; 선택 과제는 `fizzbuzz/` |
+| 04. 함수와 스코프 | [04장 문제별 준비](04-functions-scope/README.md) | `_practice/04-functions-scope/` 아래의 `grade/`, `repair/`, `sum-even/`, `study-plan/`, `stepper/`; 선택 과제는 `apply-twice/` |
 
 연습 폴더에도 새 `go.mod`나 `go.work`를 만들지 않습니다. 루트의 모듈 설정을 사용합니다. 한 폴더에는 실행 프로그램 하나를 두고, 답안을 보관하려면 다른 폴더를 사용하세요. 같은 폴더에 `main` 함수가 있는 파일을 여러 개 두면 중복 선언이 발생합니다.
 
@@ -44,5 +45,6 @@ go fmt ./_practice/01-first-program/message
 | 01. 첫 Go 프로그램 | [출력 예측·변형·보고서·오류 진단과 선택 과제](01-first-program/README.md) | [01장 해설](../solutions/01-first-program/README.md) |
 | 02. 변수·상수·자료형·연산자 | [값 예측·시간 계산·형 변환·평균·예산 비교](02-variables-types/README.md) | [02장 해설](../solutions/02-variables-types/README.md) |
 | 03. 조건문과 반복문 | [분기·반복 추적·끝점 수정·배수 합산·목표 누적](03-control-flow/README.md) | [03장 해설](../solutions/03-control-flow/README.md) |
+| 04. 함수와 스코프 | [값 전달·다중 반환·스코프 수정·가변 인자·클로저](04-functions-scope/README.md) | [04장 해설](../solutions/04-functions-scope/README.md) |
 
 새로운 장의 문제는 해당 장이 작성될 때 추가합니다. [전체 교재 목차](../book/README.md)에서 집필 상태를 확인할 수 있습니다.

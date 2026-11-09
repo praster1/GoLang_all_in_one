@@ -10,6 +10,7 @@
 | 01. 첫 Go 프로그램 | [01장 연습문제](../exercises/01-first-program/README.md) | [문제 1~5와 선택 A 해설](01-first-program/README.md) |
 | 02. 변수·상수·자료형·연산자 | [02장 연습문제](../exercises/02-variables-types/README.md) | [문제 1~6과 선택 A 해설](02-variables-types/README.md) |
 | 03. 조건문과 반복문 | [03장 연습문제](../exercises/03-control-flow/README.md) | [문제 1~6과 선택 A 해설](03-control-flow/README.md) |
+| 04. 함수와 스코프 | [04장 연습문제](../exercises/04-functions-scope/README.md) | [문제 1~6과 선택 A 해설](04-functions-scope/README.md) |
 
 ## 실행 가능한 참고 구현
 
@@ -25,6 +26,10 @@
 | 03장 문제 3: 신호 안내 | [signal/main.go](03-control-flow/signal/main.go) | [출력 테스트](03-control-flow/signal/main_test.go) |
 | 03장 문제 5: 배수 합산 | [multiples/main.go](03-control-flow/multiples/main.go) | [출력 테스트](03-control-flow/multiples/main_test.go) |
 | 03장 문제 6: 목표 학습 시간 | [goal/main.go](03-control-flow/goal/main.go) | [출력 테스트](03-control-flow/goal/main_test.go) |
+| 04장 문제 2: 점수 판정 함수 | [grade/main.go](04-functions-scope/grade/main.go) | [함수·출력 테스트](04-functions-scope/grade/main_test.go) |
+| 04장 문제 4: 짝수 합계 | [sum-even/main.go](04-functions-scope/sum-even/main.go) | [함수·출력 테스트](04-functions-scope/sum-even/main_test.go) |
+| 04장 문제 5: 학습 계획 | [study-plan/main.go](04-functions-scope/study-plan/main.go) | [함수·출력 테스트](04-functions-scope/study-plan/main_test.go) |
+| 04장 문제 6: 상태를 기억하는 함수 | [stepper/main.go](04-functions-scope/stepper/main.go) | [함수·출력 테스트](04-functions-scope/stepper/main_test.go) |
 
 실행 위치와 명령, 예상 결과는 각 장의 해설에 있습니다. 참고 구현을 실행한 결과와 개인 풀이를 실행한 결과를 구분해서 확인하세요.
 
