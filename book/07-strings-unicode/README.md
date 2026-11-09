@@ -1079,4 +1079,4 @@ go test -count=1 ./examples/07-strings-unicode/... ./solutions/07-strings-unicod
 
 다음 08장에서는 관련 값을 구조체로 묶고 포인터로 변경 대상을 표현합니다. 슬라이스·맵에서 배운 공유와 값 복사의 차이를 구조체 필드에 적용합니다.
 
-[이전: 06. 맵과 집계](../06-maps/README.md) · [전체 목차](../README.md) · [문제](../../exercises/07-strings-unicode/README.md) · [해설](../../solutions/07-strings-unicode/README.md)
+[이전: 06. 맵과 집계](../06-maps/README.md) · [다음: 08. 포인터와 구조체](../08-pointers-structs/README.md) · [전체 목차](../README.md) · [문제](../../exercises/07-strings-unicode/README.md) · [해설](../../solutions/07-strings-unicode/README.md)

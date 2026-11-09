@@ -1129,4 +1129,4 @@ go test ./solutions/08-pointers-structs/...
 
 다음 주제는 **09장 메서드와 인터페이스**입니다. 이번 장에서 만든 타입에 동작을 연결하고, 서로 다른 타입이 공통 동작을 제공하는 방식을 배웁니다.
 
-[이전: 07장 문자열과 유니코드](../07-strings-unicode/README.md) · [전체 목차](../README.md) · [연습문제](../../exercises/08-pointers-structs/README.md)
+[이전: 07장 문자열과 유니코드](../07-strings-unicode/README.md) · [다음: 09. 메서드와 인터페이스](../09-methods-interfaces/README.md) · [전체 목차](../README.md) · [연습문제](../../exercises/08-pointers-structs/README.md)

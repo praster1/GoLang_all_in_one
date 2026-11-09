@@ -1054,4 +1054,4 @@ go test -count=1 ./examples/05-arrays-slices/... ./solutions/05-arrays-slices/..
 
 다음 06장에서는 정수 위치 대신 이름 같은 키로 값을 찾는 맵을 배웁니다. 슬라이스의 순서와 맵의 키를 함께 사용해 빈도와 그룹별 값을 집계합니다.
 
-[이전: 04. 함수와 스코프](../04-functions-scope/README.md) · [전체 목차](../README.md) · [문제](../../exercises/05-arrays-slices/README.md) · [해설](../../solutions/05-arrays-slices/README.md)
+[이전: 04. 함수와 스코프](../04-functions-scope/README.md) · [다음: 06. 맵과 집계](../06-maps/README.md) · [전체 목차](../README.md) · [문제](../../exercises/05-arrays-slices/README.md) · [해설](../../solutions/05-arrays-slices/README.md)
