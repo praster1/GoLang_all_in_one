@@ -73,35 +73,101 @@ func checkMarkdown(path string) (links int, problems []string) {
 	var fence byte
 	fenceLength := 0
 	lineNumber := 0
+	var paragraph []string
+	paragraphLine := 0
+	checkParagraph := func() {
+		// A code span may continue across a soft line break. Mask it before
+		// checking individual lines, preserving diagnostic line numbers.
+		text := maskCodeSpans(strings.Join(paragraph, "\n"))
+		for offset, line := range strings.Split(text, "\n") {
+			for _, match := range inlineLink.FindAllStringSubmatch(line, -1) {
+				local, err := checkTarget(path, match[1])
+				if local {
+					links++
+				}
+				if err != nil {
+					problems = append(problems, fmt.Sprintf("%s:%d: %s: %v", path, paragraphLine+offset, match[1], err))
+				}
+			}
+		}
+		paragraph = nil
+	}
 	for scanner.Scan() {
 		lineNumber++
 		line := scanner.Text()
 		trimmed := strings.TrimSpace(line)
-		if marker, length := fenceMarker(trimmed); length >= 3 {
-			if fence == 0 {
-				fence, fenceLength = marker, length
-			} else if marker == fence && length >= fenceLength && strings.TrimSpace(trimmed[length:]) == "" {
+		marker, length := fenceMarker(trimmed)
+		if fence != 0 {
+			if marker == fence && length >= fenceLength && strings.TrimSpace(trimmed[length:]) == "" {
 				fence, fenceLength = 0, 0
 			}
 			continue
 		}
-		if fence != 0 {
+		// Backtick fence info strings cannot contain backticks. In particular,
+		// a line beginning with a complete triple-backtick span is not a fence.
+		if length >= 3 && (marker != '`' || !strings.ContainsRune(trimmed[length:], '`')) {
+			checkParagraph()
+			fence, fenceLength = marker, length
 			continue
 		}
-		for _, match := range inlineLink.FindAllStringSubmatch(line, -1) {
-			local, err := checkTarget(path, match[1])
-			if local {
-				links++
-			}
-			if err != nil {
-				problems = append(problems, fmt.Sprintf("%s:%d: %s: %v", path, lineNumber, match[1], err))
-			}
+		if trimmed == "" {
+			checkParagraph()
+			continue
 		}
+		if len(paragraph) == 0 {
+			paragraphLine = lineNumber
+		}
+		paragraph = append(paragraph, line)
 	}
+	checkParagraph()
 	if err := scanner.Err(); err != nil {
 		problems = append(problems, fmt.Sprintf("%s: %v", path, err))
 	}
 	return links, problems
+}
+
+// maskCodeSpans hides matched CommonMark backtick spans while retaining newlines.
+// Unequal runs cannot close a span, and an unmatched opener remains literal.
+func maskCodeSpans(text string) string {
+	masked := []byte(text)
+	for start := 0; start < len(text); {
+		if text[start] == '\\' && start+1 < len(text) {
+			start += 2 // An escaped backtick cannot open a span.
+			continue
+		}
+		if text[start] != '`' {
+			start++
+			continue
+		}
+		_, openingLength := fenceMarker(text[start:])
+		openingEnd := start + openingLength
+		closingEnd := -1
+		for search := openingEnd; search < len(text); {
+			next := strings.IndexByte(text[search:], '`')
+			if next < 0 {
+				break
+			}
+			closingStart := search + next
+			_, length := fenceMarker(text[closingStart:])
+			search = closingStart + length
+			// Inside a span, even a backslash before the closing run is literal.
+			if length == openingLength {
+				closingEnd = search
+				break
+			}
+		}
+		if closingEnd < 0 {
+			start = openingEnd
+			continue
+		}
+		for i := start; i < closingEnd; i++ {
+			if masked[i] != '\n' {
+				masked[i] = ' '
+			}
+		}
+		start = closingEnd
+	}
+	return string(masked)
 }
 
 func fenceMarker(line string) (byte, int) {

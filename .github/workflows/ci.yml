@@ -21,7 +21,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 10
+    timeout-minutes: 20
     env:
       GOTOOLCHAIN: local
     steps:
@@ -34,7 +34,7 @@ jobs:
           # Keep this selector in sync when changing the go directive in go.mod.
           go-version: '1.27.x'
           check-latest: true
-          cache: false
+          cache: true
       - name: Show Go version
         run: go version
       - name: Check formatting

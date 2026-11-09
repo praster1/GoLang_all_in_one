@@ -1066,8 +1066,8 @@ go test -count=1 ./examples/04-functions-scope/... ./solutions/04-functions-scop
 
 ## 다음 학습
 
-다음은 **05. 배열과 슬라이스**이며 아직 집필 예정입니다. 가변 인자에서 만난 `[]int`를 출발점으로 여러 값을 저장하고, 길이와 용량을 확인하고, 원소를 추가하고 복사하는 방법을 배웁니다. 특히 함수에 전달한 슬라이스와 원래 값이 저장 공간을 공유하는 경우를 직접 확인합니다. 집필 상태는 [전체 목차](../README.md)와 [로드맵](../../docs/ROADMAP.md)에서 확인합니다.
+다음은 [05. 배열과 슬라이스](../05-arrays-slices/README.md)입니다. 가변 인자에서 만난 `[]int`를 출발점으로 여러 값을 저장하고, 길이와 용량을 확인하고, 원소를 추가하고 복사하는 방법을 배웁니다. 특히 함수에 전달한 슬라이스와 원래 값이 저장 공간을 공유하는 경우를 직접 확인합니다. 집필 상태는 [전체 목차](../README.md)와 [로드맵](../../docs/ROADMAP.md)에서 확인합니다.
 
-| 이전 | 목차 | 실습과 해설 |
-| --- | --- | --- |
-| [03. 조건문과 반복문](../03-control-flow/README.md) | [전체 목차](../README.md) | [문제](../../exercises/04-functions-scope/README.md) · [해설](../../solutions/04-functions-scope/README.md) |
+| 이전 | 목차 | 다음 | 실습과 해설 |
+| --- | --- | --- | --- |
+| [03. 조건문과 반복문](../03-control-flow/README.md) | [전체 목차](../README.md) | [05. 배열과 슬라이스](../05-arrays-slices/README.md) | [문제](../../exercises/04-functions-scope/README.md) · [해설](../../solutions/04-functions-scope/README.md) |

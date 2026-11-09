@@ -1,0 +1,7 @@
+.git
+_practice
+bin
+dist
+coverage
+.env
+.env.*
