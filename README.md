@@ -4,7 +4,7 @@
 
 설명을 읽고, 작은 예제를 실행하고, 결과를 바꿔 보고, 연습문제로 확인합니다. 문법의 사용법과 함께 왜 그렇게 작성하는지 설명합니다. 기본 과정은 Go 표준 라이브러리를 중심으로 구성하며, 데이터 처리와 백엔드 개발로 확장합니다.
 
-> **00–04장**의 본문·실습·해설을 제공합니다. 개발 환경을 마련한 뒤 값을 계산하고, 조건과 반복을 사용하며, 작은 함수로 처리를 나누어 조합할 수 있습니다. 05–31장은 집필 계획입니다. 실제 작성·검토 상태는 [전체 목차](book/README.md)에서 확인합니다.
+> **00–31장 전체**의 본문·실습·해설과 실행 코드를 제공합니다. 기초 문법, 패키지·테스트, 입출력·동시성, HTTP·SQL, 품질·배포를 거쳐 세 가지 종합 프로그램을 완성합니다. [전체 목차](book/README.md)에서 순서대로 읽거나, [검증 기록](docs/VALIDATION.md)에서 실행 환경과 확인 범위를 볼 수 있습니다.
 
 ## 어디에서 시작할까요?
 
@@ -15,6 +15,9 @@
 | 값을 저장하고 계산하는 방법을 배우고 싶다 | [02장 · 변수·상수·자료형·연산자](book/02-variables-types/README.md) |
 | 조건에 따라 선택하고 같은 작업을 반복하고 싶다 | [03장 · 조건문과 반복문](book/03-control-flow/README.md) |
 | 함수를 만들고 값과 이름의 사용 범위를 이해하고 싶다 | [04장 · 함수와 스코프](book/04-functions-scope/README.md) |
+| CSV 데이터를 읽고 집계하는 완성 도구를 보고 싶다 | [29장 · CSV 분석 CLI](book/29-csv-cli/README.md) |
+| 메모리·SQL 저장소를 갖춘 API를 만들고 싶다 | [30장 · 할 일 HTTP API](book/30-todo-api/README.md) |
+| 작업 수를 제한하고 취소하는 배치를 만들고 싶다 | [31장 · 동시 배치 처리](book/31-concurrent-batch/README.md) |
 | 전체 학습 순서와 작성 상태를 보고 싶다 | [32개 장의 목차](book/README.md) |
 | 예제를 찾아 실행하고 싶다 | [예제 안내](examples/README.md) |
 | 직접 문제를 풀고 싶다 | [연습문제 안내](exercises/README.md) |
@@ -44,7 +47,7 @@ go run ./examples/01-first-program/hello
 - 모듈 기준: **Go 1.27.0 이상**, Go 1.27 계열을 사용합니다.
 - 시작 시 권장 설치 버전: **Go 1.27.3**. 2026-11-09에 [공식 다운로드](https://go.dev/dl/)와 [릴리스 이력](https://go.dev/doc/devel/release)을 확인했습니다.
 - CI는 `1.27.x`의 최신 패치를 사용합니다. 버전을 올릴 때는 `go.mod`, CI와 설치 안내를 함께 점검합니다.
-- 현재 실행 예제에는 외부 Go 모듈 의존성이 없습니다.
+- 기본 문법·입출력·HTTP·동시성은 표준 라이브러리로 학습합니다. 24장과 30장의 실제 SQL 실습에는 `modernc.org/sqlite v1.62.0`을 사용하며 버전은 `go.mod`·`go.sum`에 고정합니다. 별도 DB 서버나 계정은 필요하지 않습니다. 처음 의존성을 내려받을 때는 네트워크가 필요합니다.
 
 ## 학습 방식
 
@@ -87,14 +90,14 @@ Linux에서 C 컴파일러가 준비되어 있다면 데이터 레이스 검사�
 go test -race ./...
 ```
 
-GitHub Actions는 Windows·Linux에서 포맷, 정적 검사, 테스트, 빌드, 로컬 문서 링크를 확인하고 Linux에서 레이스 검사를 실행합니다. 검사 범위는 [CI 설정](.github/workflows/ci.yml)과 [기여 안내](CONTRIBUTING.md)를 참고하세요.
+GitHub Actions는 Windows·Linux에서 포맷, 정적 검사, 테스트, 빌드, 로컬 문서 링크를 확인하고 Linux에서 레이스 검사를 실행합니다. 28장의 [산출물 워크플로](.github/workflows/build-artifacts.yml)는 Linux·Windows 실행 파일과 컨테이너의 대표 동작을 검사합니다. 검사 범위와 실제 결과는 [CI 설정](.github/workflows/ci.yml), [기여 안내](CONTRIBUTING.md), [검증 기록](docs/VALIDATION.md)을 참고하세요.
 
 ## 집필과 프로젝트 지침
 
 - [AGENTS.md](AGENTS.md): 이 저장소에서 작업하는 AI 에이전트의 공통 지침
 - [프로젝트 방향과 운영 기준](docs/PROJECT_GUIDE.md): 대상 독자, 범위, 구조와 완료 기준
 - [교재 집필 기준](docs/AUTHORING.md): 설명, 예제, 연습문제와 출처 작성법
-- [집필 로드맵](docs/ROADMAP.md): 다음에 작성할 내용과 단계별 목표
+- [집필 로드맵](docs/ROADMAP.md): 완료한 집필 범위와 이후 개정 방향
 - [ChatGPT 프로젝트용 지침](docs/CHATGPT_PROJECT_INSTRUCTIONS.md): 프로젝트 설정의 지침란에 사용할 문구
 - [기여 안내](CONTRIBUTING.md): 변경 작성과 검증 절차
 
