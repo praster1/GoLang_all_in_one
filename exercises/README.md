@@ -1,6 +1,6 @@
 # 연습문제 안내
 
-연습문제는 설명을 읽은 뒤 스스로 코드를 작성하는 공간입니다. 교재의 실행 예제는 `examples/`, 참고 풀이는 `solutions/`에 있습니다.
+연습문제는 설명을 읽은 뒤 출력을 예측하고, 직접 코드를 수정하고, 오류 원인을 확인하는 공간입니다. 교재의 실행 예제는 `examples/`, 문제를 푼 뒤 비교할 해설은 `solutions/`에 있습니다.
 
 ## 학습 순서
 
@@ -8,44 +8,37 @@
 2. 예상 결과를 적고 직접 작성합니다.
 3. 실행 결과와 예상 결과를 비교합니다.
 4. 막히면 문제의 힌트를 펼칩니다.
-5. 참고 풀이를 읽고 자신의 코드와 차이를 설명합니다.
+5. 마지막에 해설을 읽고 자신의 풀이와 차이를 설명합니다.
 
-동일한 결과를 만드는 코드는 여러 가지일 수 있습니다. 참고 풀이를 외우기보다 요구 사항이 무엇인지, 자신의 코드가 어떤 입력까지 처리하는지 확인하세요.
+동일한 결과를 만드는 코드는 여러 가지일 수 있습니다. 코드 모양을 외우기보다 요구 사항을 만족하는지, 어떤 동작을 확인했는지 설명해 보세요.
 
-## 개인 연습 폴더
+## 개인 연습 폴더와 준비
 
-개인 코드는 저장소 루트의 `/_practice/` 아래에 둡니다. 이 폴더는 Git에 포함하지 않습니다. 또한 Go의 `./...` 패키지 탐색에서 이름이 `_`로 시작하는 디렉터리는 제외되므로, 실습 도중 아직 완성되지 않은 코드가 교재 전체 검사에 섞이지 않습니다. 개인 코드의 경로를 직접 지정하면 실행하고 검사할 수 있습니다. 패키지 패턴의 규칙은 [Go 명령 문서](https://pkg.go.dev/cmd/go#hdr-Package_lists_and_patterns)를 참고합니다.
+개인 코드는 저장소 루트의 `/_practice/` 아래에 둡니다. 각 장의 문제 문서에 **기존 파일을 보존하는 준비 명령**이 있습니다. 자신의 PowerShell 또는 Bash/Zsh에 맞는 블록을 선택하세요.
 
-### Windows PowerShell
+| 장 | 준비 안내 | 개인 파일의 위치 |
+| --- | --- | --- |
+| 00. 개발 환경과 학습 준비 | [00장 실습 준비](00-setup/README.md) | `_practice/00-setup/main.go` |
+| 01. 첫 Go 프로그램 | [01장 문제별 준비](01-first-program/README.md) | `_practice/01-first-program/` 아래의 `message/`, `report/`, `repair/`; 선택 과제는 `greeting/` |
 
-```powershell
-New-Item -ItemType Directory -Force _practice/01-first-program | Out-Null
-Copy-Item examples/01-first-program/hello/main.go _practice/01-first-program/main.go
-```
+연습 폴더에도 새 `go.mod`나 `go.work`를 만들지 않습니다. 루트의 모듈 설정을 사용합니다. 한 폴더에는 실행 프로그램 하나를 두고, 답안을 보관하려면 다른 폴더를 사용하세요. 같은 폴더에 `main` 함수가 있는 파일을 여러 개 두면 중복 선언이 발생합니다.
 
-### macOS·Linux·WSL
+`/_practice/`는 Git에 포함하지 않습니다. 또한 Go의 `./...` 패키지 탐색에서 이름이 `_`로 시작하는 디렉터리는 제외됩니다. 이는 Git의 무시 설정과 별개인 Go 도구의 동작입니다. 실습 중인 코드를 실행하거나 포맷할 때는 **해당 폴더를 직접 지정**합니다. [Go의 패키지 탐색 규칙](https://pkg.go.dev/cmd/go#hdr-Package_lists_and_patterns)을 참고합니다.
 
-```bash
-mkdir -p _practice/01-first-program
-cp examples/01-first-program/hello/main.go _practice/01-first-program/main.go
-```
-
-이미 연습한 `main.go`가 있다면 복사 명령을 다시 실행하기 전에 내용을 확인하세요. 새로 복사하면 이전 실습을 덮어쓸 수 있습니다.
-
-복사한 파일을 편집한 뒤 저장소 루트에서 실행합니다.
+예를 들어 01장의 준비 단계를 마친 뒤에는 저장소 루트에서 다음 명령을 사용합니다.
 
 ```text
-go run ./_practice/01-first-program
-go fmt ./_practice/01-first-program
+go run ./_practice/01-first-program/message
+go fmt ./_practice/01-first-program/message
 ```
 
-연습 폴더에도 새 `go.mod`는 만들지 않습니다. 루트의 모듈 설정을 사용합니다. 한 폴더에는 실행 프로그램 하나를 두고, 이전 답안을 보관하려면 다른 이름의 폴더를 만드세요. 같은 폴더에 `main` 함수가 있는 파일을 여러 개 쌓아 두면 중복 선언이 발생합니다.
+`go fmt`는 파일 형식을 실제로 수정합니다. 테스트가 제공되는 과제는 그 과제의 안내에 따라 적용하세요. 다른 문제의 테스트를 한 폴더에 섞지 않습니다.
 
 ## 현재 제공하는 문제
 
-| 장 | 문제 | 참고 풀이 |
+| 장 | 문제 | 해설 |
 | --- | --- | --- |
 | 00. 개발 환경과 학습 준비 | [환경 확인·실행·문제 해결 실습](00-setup/README.md) | [00장 실습 해설](../solutions/00-setup/README.md) |
-| 01. 첫 Go 프로그램 | [변형·선택 응용 문제와 확인 질문 안내](01-first-program/README.md) | [풀이 안내](../solutions/README.md) |
+| 01. 첫 Go 프로그램 | [출력 예측·변형·보고서·오류 진단과 선택 과제](01-first-program/README.md) | [01장 해설](../solutions/01-first-program/README.md) |
 
-새로운 장의 문제는 해당 장이 작성될 때 추가합니다.
+새로운 장의 문제는 해당 장이 작성될 때 추가합니다. [전체 교재 목차](../book/README.md)에서 집필 상태를 확인할 수 있습니다.
