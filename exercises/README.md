@@ -45,6 +45,7 @@ go fmt ./_practice/01-first-program
 
 | 장 | 문제 | 참고 풀이 |
 | --- | --- | --- |
+| 00. 개발 환경과 학습 준비 | [환경 확인·실행·문제 해결 실습](00-setup/README.md) | [00장 실습 해설](../solutions/00-setup/README.md) |
 | 01. 첫 Go 프로그램 | [변형·선택 응용 문제와 확인 질문 안내](01-first-program/README.md) | [풀이 안내](../solutions/README.md) |
 
 새로운 장의 문제는 해당 장이 작성될 때 추가합니다.

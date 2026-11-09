@@ -20,6 +20,7 @@ go.work.sum
 
 # Editor / operating-system files.
 .idea/
+*.iml
 *.swp
 *.swo
 .DS_Store
