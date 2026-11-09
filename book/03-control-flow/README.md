@@ -956,8 +956,8 @@ go test -count=1 ./examples/03-control-flow/... ./solutions/03-control-flow/...
 
 ## 다음 학습
 
-다음은 **04. 함수와 스코프**이며 아직 집필 예정입니다. 이번 장에서 만든 판단과 반복을 이름 있는 함수로 나누고, 값을 전달하고 결과를 돌려받는 방법으로 이어집니다. 함수의 매개변수와 반환값, 이름의 사용 범위를 함께 살펴봅니다. 집필 상태는 [전체 목차](../README.md)와 [로드맵](../../docs/ROADMAP.md)에서 확인합니다.
+다음은 [04. 함수와 스코프](../04-functions-scope/README.md)입니다. 이번 장에서 만든 판단과 반복을 이름 있는 함수로 나누고, 값을 전달하고 결과를 돌려받는 방법으로 이어집니다. 매개변수와 반환값, 이름의 사용 범위를 확인한 뒤 가변 인자·함수값·클로저로 확장합니다.
 
-| 이전 | 목차 | 실습과 해설 |
-| --- | --- | --- |
-| [02. 변수·상수·자료형·연산자](../02-variables-types/README.md) | [전체 목차](../README.md) | [문제](../../exercises/03-control-flow/README.md) · [해설](../../solutions/03-control-flow/README.md) |
+| 이전 | 목차 | 다음 | 실습과 해설 |
+| --- | --- | --- | --- |
+| [02. 변수·상수·자료형·연산자](../02-variables-types/README.md) | [전체 목차](../README.md) | [04. 함수와 스코프](../04-functions-scope/README.md) | [문제](../../exercises/03-control-flow/README.md) · [해설](../../solutions/03-control-flow/README.md) |

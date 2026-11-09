@@ -52,6 +52,24 @@ go test -count=1 ./examples/02-variables-types/...
 go test -count=1 ./examples/03-control-flow/...
 ```
 
+## 04. 함수와 스코프
+
+| 예제 | 실행 명령 | 확인할 내용 |
+| --- | --- | --- |
+| [greeting](04-functions-scope/greeting/main.go) | `go run ./examples/04-functions-scope/greeting` | 매개변수로 값을 받는 함수 정의와 호출 |
+| [value-return](04-functions-scope/value-return/main.go) | `go run ./examples/04-functions-scope/value-return` | 값 전달, 반환값과 호출한 쪽의 대입 |
+| [divide](04-functions-scope/divide/main.go) | `go run ./examples/04-functions-scope/divide` | 여러 값 반환과 입력 확인 결과 처리 |
+| [scope](04-functions-scope/scope/main.go) | `go run ./examples/04-functions-scope/scope` | 패키지 상수와 블록 안팎의 이름 사용 범위 |
+| [variadic](04-functions-scope/variadic/main.go) | `go run ./examples/04-functions-scope/variadic` | 개수가 다른 인자를 받는 가변 인자 함수 |
+| [function-values](04-functions-scope/function-values/main.go) | `go run ./examples/04-functions-scope/function-values` | 함수를 변수에 저장하고 다른 함수에 전달 |
+| [closure](04-functions-scope/closure/main.go) | `go run ./examples/04-functions-scope/closure` | 클로저의 상태 유지와 카운터 사이의 독립성 |
+
+각 예제의 코드 해설과 예상 출력은 [04장](../book/04-functions-scope/README.md)에서 확인합니다. 일곱 예제만 검사하려면 저장소 루트에서 다음을 실행합니다.
+
+```sh
+go test -count=1 ./examples/04-functions-scope/...
+```
+
 ## 예제를 읽는 순서
 
 1. 연결된 교재 장에서 학습 목표와 실행 결과를 확인합니다.
