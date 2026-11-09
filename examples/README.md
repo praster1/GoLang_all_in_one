@@ -34,6 +34,24 @@
 go test -count=1 ./examples/02-variables-types/...
 ```
 
+## 03. 조건문과 반복문
+
+| 예제 | 실행 명령 | 확인할 내용 |
+| --- | --- | --- |
+| [conditions](03-control-flow/conditions/main.go) | `go run ./examples/03-control-flow/conditions` | `if`·`else if`·`else`로 실행할 코드 선택 |
+| [switch](03-control-flow/switch/main.go) | `go run ./examples/03-control-flow/switch` | 여러 값을 묶은 `case`와 `default` |
+| [for-sum](03-control-flow/for-sum/main.go) | `go run ./examples/03-control-flow/for-sum` | 세 부분으로 구성된 `for`와 누적 합계 |
+| [countdown](03-control-flow/countdown/main.go) | `go run ./examples/03-control-flow/countdown` | 조건만 사용하는 `for`와 종료 조건 |
+| [loop-control](03-control-flow/loop-control/main.go) | `go run ./examples/03-control-flow/loop-control` | `break`로 반복 종료, `continue`로 현재 회차의 나머지 건너뛰기 |
+| [range-count](03-control-flow/range-count/main.go) | `go run ./examples/03-control-flow/range-count` | 정수에 대한 `range`와 0부터 시작하는 반복 값 |
+| [nested](03-control-flow/nested/main.go) | `go run ./examples/03-control-flow/nested` | 중첩 반복문의 실행 순서 |
+
+각 예제의 코드 해설과 예상 출력은 [03장](../book/03-control-flow/README.md)에서 확인합니다. 일곱 예제만 검사하려면 저장소 루트에서 다음을 실행합니다.
+
+```sh
+go test -count=1 ./examples/03-control-flow/...
+```
+
 ## 예제를 읽는 순서
 
 1. 연결된 교재 장에서 학습 목표와 실행 결과를 확인합니다.
