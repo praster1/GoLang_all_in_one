@@ -1,0 +1,29 @@
+name: 오류 수정
+description: 설명, 예제 코드 또는 실행 결과의 오류를 알려주세요.
+title: "[오류] "
+body:
+  - type: input
+    id: location
+    attributes:
+      label: 장 / 파일 위치
+      placeholder: book/01-first-program/README.md의 실행 결과
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 현재 내용과 문제점
+      description: 어떤 설명이나 실행 결과가 잘못되었는지 적어주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 재현 방법과 환경
+      description: 코드 문제라면 실행 명령, 오류 메시지, OS와 go version 결과를 적어주세요.
+      render: text
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대하는 내용 / 참고 자료
+      description: 수정 제안이나 공식 문서 링크가 있다면 적어주세요.

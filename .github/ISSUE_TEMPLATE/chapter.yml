@@ -1,0 +1,30 @@
+name: 교재 개선 제안
+description: 새로운 설명, 연습 문제 또는 장 구성을 제안하세요.
+title: "[교재] "
+body:
+  - type: input
+    id: chapter
+    attributes:
+      label: 관련 장 / 주제
+      placeholder: 02장 변수와 기본 자료형
+    validations:
+      required: true
+  - type: textarea
+    id: learning_goal
+    attributes:
+      label: 학습자가 할 수 있게 될 일
+      description: 이 내용을 추가하면 해결할 수 있는 학습상의 어려움을 적어주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 제안 내용
+      description: 설명, 예제, 연습 문제의 구체적인 방향을 적어주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: 참고 자료
+      description: 공식 문서 링크나 관련된 기존 장이 있다면 적어주세요.

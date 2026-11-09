@@ -1,0 +1,59 @@
+name: Go and documentation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Verify (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      GOTOOLCHAIN: local
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          # go.mod sets the language minimum; CI follows security patches in that minor.
+          # Keep this selector in sync when changing the go directive in go.mod.
+          go-version: '1.27.x'
+          check-latest: true
+          cache: false
+      - name: Show Go version
+        run: go version
+      - name: Check formatting
+        shell: bash
+        run: |
+          unformatted=$(gofmt -l .)
+          if [ -n "$unformatted" ]; then
+            printf '%s\n' "$unformatted"
+            printf 'Run go fmt ./... and commit the formatted files.\n'
+            exit 1
+          fi
+      - name: Build all packages
+        run: go build ./...
+      - name: Vet all packages
+        run: go vet ./...
+      - name: Test all packages
+        run: go test -count=1 ./...
+      - name: Check documentation links
+        run: go run ./tools/checkdocs
+      - name: Run race detector
+        if: runner.os == 'Linux'
+        run: go test -race -count=1 ./...
